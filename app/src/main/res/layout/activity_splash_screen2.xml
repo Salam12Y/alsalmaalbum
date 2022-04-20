@@ -7,9 +7,10 @@
 
     <ImageView
         android:id="@+id/imvSplash"
-        android:layout_width="525dp"
-        android:layout_height="926dp"
+        android:layout_width="624dp"
+        android:layout_height="1180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launche4334r57858776666_foreground"
-        tools:layout_editor_absoluteX="-57dp"
-        tools:layout_editor_absoluteY="-98dp" />
+        tools:layout_editor_absoluteX="-98dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

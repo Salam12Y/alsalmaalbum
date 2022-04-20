@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import Mydata.MyAlbum;
+import abbas.samih.salamalbums.FullExample.AllAlbumsActivity;
 
 public class AddAlbum extends AppCompatActivity {
     private TextView tvNewAlbum;
@@ -73,7 +74,7 @@ public class AddAlbum extends AppCompatActivity {
             t.setKey(key);
             // add Album to current user.
             //just this user can see this album
-            ref.child("myAlbums").child(key).setValue(t).addOnCompleteListener(new OnCompleteListener<Void>() {
+            ref.child("myAlbums").child(uid).child(key).setValue(t).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {//response
                     if(task.isSuccessful())

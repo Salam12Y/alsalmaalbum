@@ -3,7 +3,6 @@ package Mydata;
 public class MyAlbum {
     private String name;
     private String content;
-    private String t;
     private String key;
     private String owner;
 
@@ -19,9 +18,6 @@ public class MyAlbum {
         return content;
     }
 
-    public String getT() {
-        return t;
-    }
 
     public String getkey() {
         return key;
