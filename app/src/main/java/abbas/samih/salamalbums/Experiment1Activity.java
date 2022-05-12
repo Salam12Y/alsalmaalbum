@@ -22,7 +22,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Experiment1Activity extends AppCompatActivity {
+public class
+Experiment1Activity extends AppCompatActivity {
 
     private static final int REQUEST_CAMERA_PERMISSION =1 ;
     private Camera mCamera;

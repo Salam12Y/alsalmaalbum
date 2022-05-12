@@ -21,6 +21,8 @@
     <uses-feature android:name="android.hardware.location.gps" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -29,46 +31,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="abbas.samih.salamalbums.FullExample.MainSimpleLabelActivity">
-
-        </activity>
-        <activity android:name="abbas.samih.salamalbums.FullExample.LocalModelImageLabelingActivity">
-
-        </activity>
-
-
         <activity
-            android:name="abbas.samih.salamalbums.FullExample.BaseActivity"
-            android:label="@string/title_activity_simple_image_label">
-
-        </activity>
-
-        <activity android:name="abbas.samih.salamalbums.SignInActivity" >
-
-        </activity>
-
-        <activity android:name="abbas.samih.salamalbums.SplashScreen">
+            android:name=".FullExample.AllPicActivity"
+            android:exported="true" />
+        <activity android:name=".FullExample.MainSimpleLabelActivity" />
+        <activity android:name=".FullExample.LocalModelImageLabelingActivity" />
+        <activity
+            android:name=".FullExample.BaseActivity"
+            android:label="@string/title_activity_simple_image_label" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="abbas.samih.salamalbums.AddAlbum"></activity>
-    <activity android:name="abbas.samih.salamalbums.FullExample.AllAlbumsActivity"></activity>
-        <activity android:name="abbas.samih.salamalbums.logInActivity"></activity>
-        <activity android:name="abbas.samih.salamalbums.PhotosInAlbumActivity"></activity>
-        <activity android:name="abbas.samih.salamalbums.SearchFileActivity"></activity>
-
-
+        <activity android:name=".AddAlbum" />
+        <activity android:name=".FullExample.AllAlbumsActivity" />
+        <activity android:name=".logInActivity" />
+        <activity android:name=".PhotosInAlbumActivity" />
+        <activity android:name=".SearchFileActivity" />
 
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
             android:value="ica" />
 
-        <activity android:name="abbas.samih.salamalbums.Experiment1Activity">
-
-        </activity>
+        <activity android:name=".Experiment1Activity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -81,7 +70,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name="abbas.samih.salamalbums.CamTest2.CamTest2" />
+        <activity android:name=".CamTest2.CamTest2" />
     </application>
 
 </manifest>

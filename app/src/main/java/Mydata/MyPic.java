@@ -1,23 +1,24 @@
 package Mydata;
 
-public class MyAlbum {
+import android.media.Image;
+
+public class MyPic
+{
+
     private String name;
-    private String content;
     private String key;
     private String owner;
     private String Image;
 
 
-    public MyAlbum() {
+    public MyPic() {
     }
 
     public String getName() {
         return name;
     }
 
-    public String getContent() {
-        return content;
-    }
+
 
     public String getkey() {
         return key;
@@ -27,16 +28,9 @@ public class MyAlbum {
         return owner;
     }
 
-    public String getImage() {
-        return Image;
-    }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public void setKey(String key) {
@@ -47,9 +41,16 @@ public class MyAlbum {
         this.owner = owner;
     }
 
-    public void setImage(String Image) {
-        this.Image = Image;
+    public String getKey() {
+        return key;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
     }
 }
-
 

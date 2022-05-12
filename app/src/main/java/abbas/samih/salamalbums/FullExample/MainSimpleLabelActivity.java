@@ -50,7 +50,7 @@ public class MainSimpleLabelActivity extends BaseActivity implements OnClickList
     private static TextView mTextView;
     private Button bntDevice,btnSave2,btnAlbum;
 private FloatingActionButton floating2;
-
+    private Uri dataUri=null; //عنوان الصورة عالهاتف
 
 
     @Override
@@ -68,7 +68,16 @@ private FloatingActionButton floating2;
         btnSave2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AllAlbumsActivity.class));
+                if (dataUri!=null ) {
+
+
+                    Intent i = new Intent(getApplicationContext(), AllAlbumsActivity.class);
+                    i.putExtra("image", dataUri);
+                    startActivity(i);
+
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "select image first (+)", Toast.LENGTH_SHORT).show();
             }
         });
         btnAlbum.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +104,7 @@ private FloatingActionButton floating2;
                     checkStoragePermission(requestCode);
                     break;
                 case RC_SELECT_PICTURE:
-                    Uri dataUri = data.getData();
+                    dataUri = data.getData();
                     String path = MyHelper.getPath(this, dataUri);
 
                     if (path == null) {
@@ -124,8 +133,7 @@ private FloatingActionButton floating2;
         public void analyze(ImageProxy imageProxy) {
             @SuppressLint("UnsafeExperimentalUsageError") Image mediaImage = imageProxy.getImage();
             if (mediaImage != null) {
-                InputImage image =
-                        InputImage.fromMediaImage(mediaImage, imageProxy.getImageInfo().getRotationDegrees());
+                InputImage image = InputImage.fromMediaImage(mediaImage, imageProxy.getImageInfo().getRotationDegrees());
                 // Pass image to an ML Kit Vision API
                 // ...
             }
